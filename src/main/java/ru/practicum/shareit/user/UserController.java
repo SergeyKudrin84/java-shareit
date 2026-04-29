@@ -19,7 +19,7 @@ public class UserController {
     @PostMapping
     public ResponseEntity<UserDto> saveNewUser(@RequestBody UserDto userDto) {
         return ResponseEntity
-                .status(HttpStatus.CREATED)
+                .status(HttpStatus.OK)
                 .body(userService.saveUser(userDto));
     }
 
