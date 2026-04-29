@@ -17,10 +17,10 @@ import java.util.List;
 public class ItemController {
 
     private final ItemService itemService;
-    private final String USER_HEADER = "X-Sharer-User-Id";
+    private final String userHeader = "X-Sharer-User-Id";
 
     @PostMapping
-    public ResponseEntity<ItemDto> addNewItem(@RequestHeader(USER_HEADER) Long userId,
+    public ResponseEntity<ItemDto> addNewItem(@RequestHeader(userHeader) Long userId,
                                               @RequestBody ItemDto itemDto) {
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -29,7 +29,7 @@ public class ItemController {
 
     @PatchMapping({"/{itemId}"})
     public ResponseEntity<ItemDto> updateItem(@PathVariable Long itemId,
-                                              @RequestHeader(USER_HEADER) Long userId,
+                                              @RequestHeader(userHeader) Long userId,
                                               @RequestBody ItemDto itemDto) {
         return ResponseEntity
                 .status(HttpStatus.OK)
@@ -44,7 +44,7 @@ public class ItemController {
     }
 
     @GetMapping
-    public ResponseEntity<List<ItemDto>> getAllByOwner(@RequestHeader(USER_HEADER) Long userId) {
+    public ResponseEntity<List<ItemDto>> getAllByOwner(@RequestHeader(userHeader) Long userId) {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(itemService.getAllByOwner(userId));
