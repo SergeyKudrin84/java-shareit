@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.practicum.shareit.user.dto.UserDto;
+import ru.practicum.shareit.user.model.User;
 
 /**
  * TODO Sprint add-controllers.
@@ -17,7 +18,7 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping
-    public ResponseEntity<UserDto> saveNewUser(@RequestBody UserDto userDto) {
+    public ResponseEntity<User> saveNewUser(@RequestBody UserDto userDto) {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(userService.saveUser(userDto));
