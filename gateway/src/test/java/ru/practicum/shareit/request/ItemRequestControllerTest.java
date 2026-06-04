@@ -107,10 +107,7 @@ class ItemRequestControllerTest {
     @Test
     void create_shouldReturnBadRequest_whenDescriptionIsNull() throws Exception {
 
-        String json = """
-                {
-                }
-                """;
+        String json = "{}";
 
         mvc.perform(post("/requests")
                         .header("X-Sharer-User-Id", 1)

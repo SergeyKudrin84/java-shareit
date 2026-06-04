@@ -28,11 +28,7 @@ class CommentCreateDtoJsonTest {
     @Test
     void deserializeCommentCreateDto() throws Exception {
 
-        String json = """
-                {
-                    "text":"Great item"
-                }
-                """;
+        String json = "{\"text\":\"Great item\"}";
 
         CommentCreateDto dto = mapper.readValue(json, CommentCreateDto.class);
 
