@@ -63,7 +63,7 @@ public class ItemRequestServiceImpl implements ItemRequestService {
                 ));
         log.info("found {} all requests for user {}", requests.size(), userId);
         return requests.stream()
-                .map(rq ->{
+                .map(rq -> {
                     Long rqId = rq.getId();
                     ItemRequestDto itemRequestDto = itemRequestMapper.toRequestDto(rq);
                     itemRequestDto.setItems(itemsByRequestId.getOrDefault(rqId, List.of()));
@@ -92,7 +92,7 @@ public class ItemRequestServiceImpl implements ItemRequestService {
                     return new NotFoundException(message);
                 });
         List<Item> items = itemRepository.findByRequestId(requestId);
-        ItemRequestDto  itemRequestDto = itemRequestMapper.toRequestDto(request);
+        ItemRequestDto itemRequestDto = itemRequestMapper.toRequestDto(request);
         itemRequestDto.setItems(itemRequestMapper.toItemForRequestDtoList(items));
         log.info("found requests {}", itemRequestDto);
         return itemRequestDto;
