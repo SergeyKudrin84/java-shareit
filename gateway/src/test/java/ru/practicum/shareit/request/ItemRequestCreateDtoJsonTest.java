@@ -28,10 +28,7 @@ class ItemRequestCreateDtoJsonTest {
     @Test
     void deserializeItemRequestCreateDto() throws Exception {
 
-        String json = """
-                {
-                "description":"Need a drill"
-                }""";
+        String json = "{\"description\":\"Need a drill\"}";
 
         ItemRequestCreateDto dto =
                 mapper.readValue(json, ItemRequestCreateDto.class);
