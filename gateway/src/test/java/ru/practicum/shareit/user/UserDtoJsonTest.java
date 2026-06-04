@@ -40,10 +40,9 @@ class UserDtoJsonTest {
 
         String content = """
                 {
-                   "id": 1,
-                   "name": "Sergey",
-                   "email": "test@mail.com"
-                 }
+                "id": 1,
+                "name": "Sergey",
+                "email" : "test@mail.com",
                 """;
 
         UserDto dto = json.parseObject(content);
