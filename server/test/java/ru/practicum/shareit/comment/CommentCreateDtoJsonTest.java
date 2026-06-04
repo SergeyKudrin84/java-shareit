@@ -29,7 +29,6 @@ class CommentCreateDtoJsonTest {
 
     @Test
     void deserializeCommentCreateDto() throws Exception {
-
         String content = """
                 {
                     "text":"Good item"

@@ -55,9 +55,9 @@ class BookItemRequestDtoJsonTest {
 
         assertThat(dto.getItemId()).isEqualTo(1L);
         assertThat(dto.getStart())
-                .isEqualTo(LocalDateTime.of(2026,1,1,10,0));
+                .isEqualTo(LocalDateTime.of(2026, 1, 1, 10, 0));
 
         assertThat(dto.getEnd())
-                .isEqualTo(LocalDateTime.of(2026,1,2,10,0));
+                .isEqualTo(LocalDateTime.of(2026, 1, 2, 10, 0));
     }
 }
