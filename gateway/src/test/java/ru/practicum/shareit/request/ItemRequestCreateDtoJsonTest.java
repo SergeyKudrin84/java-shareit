@@ -30,9 +30,8 @@ class ItemRequestCreateDtoJsonTest {
 
         String json = """
                 {
-                  "description":"Need a drill"
-                }
-                """;
+                "description":"Need a drill"
+                }""";
 
         ItemRequestCreateDto dto =
                 mapper.readValue(json, ItemRequestCreateDto.class);
