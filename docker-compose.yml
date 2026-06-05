@@ -35,8 +35,8 @@ services:
       - POSTGRES_USER=shareit
       - POSTGRES_DB=shareit
       - TZ=Asia/Vladivostok
-    #volumes:
-    #  - ./server/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    volumes:
+      - ./server/schema.sql:/docker-entrypoint-initdb.d/schema.sql
     healthcheck:
       test: pg_isready -q -d $$POSTGRES_DB -U $$POSTGRES_USER
       timeout: 5s
